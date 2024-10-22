@@ -8,7 +8,7 @@ use RestClient\ContextInterface;
 
 class DefaultRetryStrategy implements RetryStrategyInterface
 {
-    private const DEFAULT_RETRY_INTERVAL = 0;
+    private const int DEFAULT_RETRY_INTERVAL = 0;
 
     private int $attempts;
     private int $maxAttempts;

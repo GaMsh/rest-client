@@ -5,14 +5,14 @@ namespace RestClient;
 final class ResponseData
 {
     /** @var mixed */
-    private $responseData;
+    private mixed $responseData;
     private string $responseBody;
 
     /**
      * @param mixed $responseData
      * @param string $responseBody
      */
-    public function __construct($responseData, string $responseBody)
+    public function __construct(mixed $responseData, string $responseBody)
     {
         $this->responseData = $responseData;
         $this->responseBody = $responseBody;
@@ -26,7 +26,7 @@ final class ResponseData
     /**
      * @return mixed
      */
-    public function getResponseData()
+    public function getResponseData(): mixed
     {
         return $this->responseData;
     }

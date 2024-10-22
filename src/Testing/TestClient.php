@@ -68,11 +68,9 @@ class TestClient implements ClientInterface
     }
 
     /**
-     * @param string $expr
-     * @param string|callable $handler
      * @return RequestHandlerInterface
      */
-    private function createHandler(string $expr, $handler): RequestHandlerInterface
+    private function createHandler(string $expr, callable|string $handler): RequestHandlerInterface
     {
         $expr = \strtolower($expr);
 
@@ -90,7 +88,7 @@ class TestClient implements ClientInterface
 
     private function parseExpr(string $expr): array
     {
-        if (false === \strpos($expr, '?')) {
+        if (!str_contains($expr, '?')) {
             $expr = 'get?' . $expr;
         }
 

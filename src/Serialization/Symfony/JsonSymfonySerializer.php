@@ -62,7 +62,7 @@ class JsonSymfonySerializer implements SerializerInterface
      * @return object|array
      * @throws UnknownTypeException
      */
-    public function deserialize(string $data, string $targetType, bool $asList)
+    public function deserialize(string $data, string $targetType, bool $asList): object|array
     {
         if (!\class_exists($targetType)) {
             throw new UnknownTypeException($targetType);
